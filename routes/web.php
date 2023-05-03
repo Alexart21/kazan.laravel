@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\CitiesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,7 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [ MainController::class, 'index' ])->name('main.index');
+Route::get('/cities/{city}', [ CitiesController::class, 'city' ])->name('cities.city');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
